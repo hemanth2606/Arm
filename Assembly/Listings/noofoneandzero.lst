@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             NoOfOneAndZero ,CODE,READONLY
+    2 00000000                 EXPORT           start1
+    3 00000000         start1
+    4 00000000 4805            LDR              R0,=0X10000050
+    5 00000002 8801            LDRH             R1,[R0]
+    6 00000004 F04F 0210       MOV              R2,#16
+    7 00000008         LOOP
+    8 00000008 0849            MOVS             R1,R1,LSR #1
+    9 0000000A BF2C 3301       ADDCS            R3,#1
+   10 0000000E 3401            ADDCC            R4,#1
+   11 00000010 3A01            SUBS             R2,#1
+   12 00000012 D1F9            BNE              LOOP
+   13 00000014 E7FE    STOP    B                STOP
+   14 00000016                 END
+              00 00 10000050 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\noofoneandzero.d -o.\objects\noofoneandzero.o -I.\RTE\_T
+arget_1 -I"C:\Users\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device
+\Include" -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefin
+e="__UVISION_VERSION SETA 527" --predefine="LPC175x_6x SETA 1" --list=.\listing
+s\noofoneandzero.lst NoOfOneAndZero.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP 00000008
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file NoOfOneAndZero.s
+   Uses
+      At line 12 in file NoOfOneAndZero.s
+Comment: LOOP used once
+NoOfOneAndZero 00000000
+
+Symbol: NoOfOneAndZero
+   Definitions
+      At line 1 in file NoOfOneAndZero.s
+   Uses
+      None
+Comment: NoOfOneAndZero unused
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 13 in file NoOfOneAndZero.s
+   Uses
+      At line 13 in file NoOfOneAndZero.s
+Comment: STOP used once
+start1 00000000
+
+Symbol: start1
+   Definitions
+      At line 3 in file NoOfOneAndZero.s
+   Uses
+      At line 2 in file NoOfOneAndZero.s
+Comment: start1 used once
+4 symbols
+339 symbols in table

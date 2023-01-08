@@ -1,0 +1,68 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Square ,CODE,READONLY
+    2 00000000                 EXPORT           start1
+    3 00000000         start1
+    4 00000000 F04F 0200       MOV              R2,#00
+    5 00000004 F04F 0107       MOV              R1,#7
+    6 00000008 4804            LDR              R0,=LOOKUP
+    7 0000000A 5C42            LDRB             R2,[R0,R1]
+    8 0000000C E7FE    STOP    B                STOP
+    9 0000000E         LOOKUP
+   10 0000000E 00 01 04 
+              09 10 19 
+              24 31 40 
+              51 64            DCB              0,1,4,9,16,25,36,49,64,81,100
+   11 00000019                 END
+              00 00 00 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\square.d -o.\objects\square.o -I.\RTE\_Target_1 -I"C:\Us
+ers\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include" -IC:\K
+eil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VER
+SION SETA 527" --predefine="LPC175x_6x SETA 1" --list=.\listings\square.lst Squ
+are.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOKUP 0000000E
+
+Symbol: LOOKUP
+   Definitions
+      At line 9 in file Square.s
+   Uses
+      At line 6 in file Square.s
+Comment: LOOKUP used once
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 8 in file Square.s
+   Uses
+      At line 8 in file Square.s
+Comment: STOP used once
+Square 00000000
+
+Symbol: Square
+   Definitions
+      At line 1 in file Square.s
+   Uses
+      None
+Comment: Square unused
+start1 00000000
+
+Symbol: start1
+   Definitions
+      At line 3 in file Square.s
+   Uses
+      At line 2 in file Square.s
+Comment: start1 used once
+4 symbols
+339 symbols in table

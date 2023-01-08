@@ -1,0 +1,69 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Array,CODE,READONLY
+    2 00000000                 EXPORT           start1
+    3 00000000         start1
+    4 00000000 F04F 0000       MOV              R0,#00
+    5 00000004 4905            LDR              R1,=0X10000050
+    6 00000006 F04F 020A       MOV              R2,#10
+    7 0000000A         LOOP
+    8 0000000A F831 3B02       LDRH             R3,[R1],#2
+    9 0000000E 4418            ADD              R0,R0,R3
+   10 00000010 1E52            SUBS             R2,R2,#01
+   11 00000012 D1FA            BNE              LOOP
+   12 00000014 4902            LDR              R1,=0X10000080
+   13 00000016 6008            STR              R0,[R1]
+   14 00000018 E7FE    STOP    B                STOP
+   15 0000001A                 END
+              00 00 10000050 
+              10000080 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\array.d -o.\objects\array.o -I.\RTE\_Target_1 -I"C:\User
+s\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include" -IC:\Kei
+l_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSI
+ON SETA 527" --predefine="LPC175x_6x SETA 1" --list=.\listings\array.lst Array.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Array 00000000
+
+Symbol: Array
+   Definitions
+      At line 1 in file Array.s
+   Uses
+      None
+Comment: Array unused
+LOOP 0000000A
+
+Symbol: LOOP
+   Definitions
+      At line 7 in file Array.s
+   Uses
+      At line 11 in file Array.s
+Comment: LOOP used once
+STOP 00000018
+
+Symbol: STOP
+   Definitions
+      At line 14 in file Array.s
+   Uses
+      At line 14 in file Array.s
+Comment: STOP used once
+start1 00000000
+
+Symbol: start1
+   Definitions
+      At line 3 in file Array.s
+   Uses
+      At line 2 in file Array.s
+Comment: start1 used once
+4 symbols
+339 symbols in table

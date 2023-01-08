@@ -1,0 +1,57 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SumSixteenNO ,CODE, READONLY
+    2 00000000                 EXPORT           start1
+    3 00000000         start1
+    4 00000000 4805            LDR              R0,=0X10000050
+    5 00000002 C81E            LDMIA            R0!,{R1-R4}
+    6 00000004 185B            ADDS             R3,R3,R1
+    7 00000006 4154            ADCS             R4,R4,R2
+    8 00000008 F04F 0500       MOV              R5,#00
+    9 0000000C BF28 3501       ADDCS            R5,#01
+   10 00000010 E880 0038       STMIA            R0,{R3,R4,R5}
+   11 00000014 E7FE    STOP    B                STOP
+   12 00000016                 END
+              00 00 10000050 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\sumsixteenno.d -o.\objects\sumsixteenno.o -I.\RTE\_Targe
+t_1 -I"C:\Users\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Inc
+lude" -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 527" --predefine="LPC175x_6x SETA 1" --list=.\listings\su
+msixteenno.lst SumSixteenNo.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 11 in file SumSixteenNo.s
+   Uses
+      At line 11 in file SumSixteenNo.s
+Comment: STOP used once
+SumSixteenNO 00000000
+
+Symbol: SumSixteenNO
+   Definitions
+      At line 1 in file SumSixteenNo.s
+   Uses
+      None
+Comment: SumSixteenNO unused
+start1 00000000
+
+Symbol: start1
+   Definitions
+      At line 3 in file SumSixteenNo.s
+   Uses
+      At line 2 in file SumSixteenNo.s
+Comment: start1 used once
+3 symbols
+338 symbols in table

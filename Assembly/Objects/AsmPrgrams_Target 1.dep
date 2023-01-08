@@ -1,0 +1,6 @@
+Dependencies for Project 'AsmPrgrams', Target 'Target 1': (DO NOT MODIFY !)
+F (F:\arm_cortex\lcd.h)(0x5A65EE6C)()
+F (F:\arm_cortex\SPI.h)(0x5A65EE6A)()
+F (F:\arm_cortex\start.lib)(0x5A65EE68)()
+F (F:\arm_cortex\start_up_alp.s)(0x636E3C39)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-I"C:\Users\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 527" --pd "LPC175x_6x SETA 1"--list .\listings\start_up_alp.lst --xref -o .\objects\start_up_alp.o --depend .\objects\start_up_alp.d)
+F (.\NoOfNegNo.s)(0x63B6FD44)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-I"C:\Users\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include"-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 527" --pd "LPC175x_6x SETA 1"--list .\listings\noofnegno.lst --xref -o .\objects\noofnegno.o --depend .\objects\noofnegno.d)

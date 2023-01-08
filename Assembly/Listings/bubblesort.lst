@@ -1,0 +1,90 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             BubbleSort,CODE,READONLY
+    2 00000000                 EXPORT           start1
+    3 00000000         start1
+    4 00000000 F04F 0105       MOV              R1,#5
+    5 00000004         OUTERLOOP
+    6 00000004 460B            MOV              R3,R1
+    7 00000006 4807            LDR              R0,=0X10000050
+    8 00000008         INLOOP
+    9 00000008 F850 2B04       LDR              R2,[R0],#4
+   10 0000000C 6804            LDR              R4,[R0]
+   11 0000000E 4294            CMP              R4,R2
+   12 00000010 D203            BCS              SKIP
+   13 00000012 F840 2904       STR              R2,[R0],#-4
+   14 00000016 F840 4B04       STR              R4,[R0],#4
+   15 0000001A         SKIP
+   16 0000001A 3B01            SUBS             R3,#1
+   17 0000001C D1F4            BNE              INLOOP
+   18 0000001E 3901            SUBS             R1,#1
+   19 00000020 D1F0            BNE              OUTERLOOP
+   20 00000022 E7FE    STOP    B                STOP
+   21 00000024                 END
+              10000050 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\bubblesort.d -o.\objects\bubblesort.o -I.\RTE\_Target_1 
+-I"C:\Users\My PC\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include
+" -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVI
+SION_VERSION SETA 527" --predefine="LPC175x_6x SETA 1" --list=.\listings\bubble
+sort.lst BubbleSort.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BubbleSort 00000000
+
+Symbol: BubbleSort
+   Definitions
+      At line 1 in file BubbleSort.s
+   Uses
+      None
+Comment: BubbleSort unused
+INLOOP 00000008
+
+Symbol: INLOOP
+   Definitions
+      At line 8 in file BubbleSort.s
+   Uses
+      At line 17 in file BubbleSort.s
+Comment: INLOOP used once
+OUTERLOOP 00000004
+
+Symbol: OUTERLOOP
+   Definitions
+      At line 5 in file BubbleSort.s
+   Uses
+      At line 19 in file BubbleSort.s
+Comment: OUTERLOOP used once
+SKIP 0000001A
+
+Symbol: SKIP
+   Definitions
+      At line 15 in file BubbleSort.s
+   Uses
+      At line 12 in file BubbleSort.s
+Comment: SKIP used once
+STOP 00000022
+
+Symbol: STOP
+   Definitions
+      At line 20 in file BubbleSort.s
+   Uses
+      At line 20 in file BubbleSort.s
+Comment: STOP used once
+start1 00000000
+
+Symbol: start1
+   Definitions
+      At line 3 in file BubbleSort.s
+   Uses
+      At line 2 in file BubbleSort.s
+Comment: start1 used once
+6 symbols
+341 symbols in table
